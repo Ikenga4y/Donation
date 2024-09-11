@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Miss Burke - Crypto Donations</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif; /* Elegant serif font */
+      margin: 0;
+      background-color: #f5f5f5; /* Light gray background */
+      color: #333; /* Darker text for better contrast */
+    }
+    .container {
+      max-width: 700px; /* Smaller container for a more focused layout */
+      margin: 40px auto;
+      background-color: #fff; /* White container */
+      padding: 30px;
+      border-radius: 4px; /* Subtle rounded corners */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+    h1, h2 {
+      text-align: center;
+      color: #666; /* Muted text color */
+    }
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    .donation-section {
+      padding: 30px;
+      background-color: #f0f8ff; /* Light blue background */
+      border: 1px solid #d0e3f0; /* Light blue border */
+      border-radius: 4px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .donation-section h2 {
+      color: #007bff; /* Blue heading */
+      margin-bottom: 15px;
+    }
+    .donation-message {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+    .donation-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #007bff; /* Blue button */
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      cursor: pointer; /* Indicate clickable button */
+    }
+    .donation-button:hover {
+      background-color: #0062cc; /* Darker blue on hover */
+    }
+    .crypto-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      background-color: #f9fafb;
+      overflow: hidden;
+    }
+    .crypto-logo {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .crypto-address {
+      flex-grow: 1;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .copy-button {
+      padding: 8px 12px;
+      background-color: #333; /* Dark gray button */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 10px;
+      transition: background-color 0.3s;
+    }
+    .copy-button:hover {
+      background-color: #222; /* Darker gray on hover */}
+  @media (max-width: 600px) {
+    .container {
+      max-width: 90%;
+    }
+    .crypto-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .crypto-logo {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .crypto-address {
+      font-size: 13px;
+    }
+    .donation-button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Support Miss Burke</h1>
+
+    <div class="donation-section">
+      <h2>A Call for Help in a Time of Crisis</h2>
+      <p class="donation-message">
+        Our beloved Miss Burke, a woman of strength and compassion, is battling a life-threatening illness. She has given so much to her community, and now, in her time of need, we turn to you—family, friends, and compassionate strangers—for help.
+        <br><br>
+        Medical costs are mounting, and we urgently need support to ensure she receives the best care. Every donation, no matter the amount, is a step toward easing her burden and providing her with the strength to fight this battle.
+        <br><br>
+        Your generosity can make a world of difference. Please consider making a donation to support Miss Burke and her family during this difficult journey.
+      </p>
+    </div>
+
+    <h2>Donate with Cryptocurrency</h2>
+
+    <div class="crypto-container">
+      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=024" alt="BTC Logo" class="crypto-logo">
+      <div class="crypto-address" id="btc-address">bc1qsx9m3q5vk2jdfh3q5cgeefw8fus94w6420264u</div>
+      <button class="copy-button" onclick="copyToClipboard('btc-address')">Copy BTC</button>
+    </div>
+
+    <div class="crypto-container">
+      <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=024" alt="ETH Logo" class="crypto-logo">
+      <div class="crypto-address" id="eth-address">0x6fbfD5db2BE5b988fF5818C1808Cb05541643abd</div>
+      <button class="copy-button" onclick="copyToClipboard('eth-address')">Copy ETH</button>
+    </div>
+  
+    <div class="crypto-container">
+      <img src="https://cryptologos.cc/logos/tron-trx-logo.png?v=024" alt="TRX Logo" class="crypto-logo">
+      <div class="crypto-address" id="trx-address">TPMrXHwm1HL6Tv5HGYDTTKjSJb5GVy2qt2</div>
+      <button class="copy-button" onclick="copyToClipboard('trx-address')">Copy TRX</button>
+    </div>
+
+  </div>
+
+  <script>
+    function copyToClipboard(elementId) {
+      var copyText = document.getElementById(elementId).textContent;
+      var tempInput = document.createElement("input");
+      document.body.appendChild(tempInput);
+      tempInput.value = copyText;
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Copied: " + copyText);
+    }
+  </script>
+
+</body>
+</html>
